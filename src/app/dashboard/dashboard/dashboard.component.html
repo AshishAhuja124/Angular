@@ -1,0 +1,21 @@
+<p>
+  dashboard works!
+</p>
+<table class="Students">
+
+  <thead>
+    <tr>
+      <th> name </th>
+      <th> branch </th>
+      <th> preferredlang </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let Student of members'>
+      <td> {{Student.name|uppercase}}</td>
+      <td> {{Student.branch}}</td>
+      <td>{{Student.preferredlang}}</td>
+      
+    </tr>
+  </tbody>
+</table>

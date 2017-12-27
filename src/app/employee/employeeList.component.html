@@ -1,0 +1,54 @@
+Search:<input type="text" name="search" [(ngModel)]="search">
+
+<table class ='employee table'>
+<thead>
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Annual Salary</th>
+        <th>Date of Birth</th>
+        <th>Index</th>
+        <th>first</th>
+        <th>last</th>
+        <th>even</th>
+        <th>odd</th>
+        <th>percentage</th>
+        <th></th>
+        <th></th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor='let employee of employees |employeeTitle:search;let i=index;let isFirst=first;let isLast=last;let isEven=even;let isOdd=odd'>
+        <td><a [routerLink]="['/editPlayer',employee.code]">{{employee.code}}</a></td>
+        <td><a [routerLink]="['/editPlayer',employee.code]">{{employee.name}}</a></td>
+        <td>{{employee.gender}}</td>
+        <td>{{employee.annualSalary| currency:'USD':true:'1.2-2'}}</td>
+        <td>{{employee.dateOfBirth|date:'fullDate'}}</td>
+        <td>{{i}}</td>
+        <td>{{isFirst}}</td>
+        <td>{{isLast}}</td>
+        <td>{{isEven}}</td>
+        <td>{{isOdd}}</td>
+        <td>{{employee.percentage}}</td>
+        <td><a [routerLink]="['/editPlayer',employee.code]">Details</a></td>
+       <!-- <td *ngIf="employee.percentage>=75">
+            <button class="btn btn-primary"appHighlight (click)="alertMe('U secured'+' '+ employee.percentage+'%')">Click Me </button>     
+        </td>
+        <td *ngIf="employee.percentage<75">
+         <button class="btn btn-primary" (click)="alertMe('U secured'+' '+ employee.percentage+'%')">Click Me </button>-->     
+        <td> <button class="btn btn-primary"appHighlight (click)="alertMe('U secured'+' '+ employee.percentage+'%')">Click Me </button>     
+        </td>   
+    </tr>
+    
+    <tr *ngIf="!employees || employees.length==0">
+        <td colspan="5">
+            No employees to display
+        </td>
+    </tr>
+    
+</tbody>
+</table>
+
+
+

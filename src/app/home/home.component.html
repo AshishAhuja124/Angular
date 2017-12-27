@@ -1,0 +1,21 @@
+<p>
+ {{homeTitle}}!
+</p>
+<ng-content></ng-content>
+<!--property binding -->
+
+<input [value]="myString"/>
+<button (click)="decrement()">
+  Decrement
+</button>
+<input type="text" [value]="count">
+<button (click)="increment()">
+  Increment
+</button>
+<button (click)="alertMe('We are using Event Binding')">Click Me </button>     <!--Event binding -->
+<input [(ngModel)]="ninja.name" />                                             <!--Two way Data Binding-->
+<input [(ngModel)]="ninja.surname" />
+
+<p> {{ninja.name}}</p>
+<p> {{ninja.surname}}</p>
+

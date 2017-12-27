@@ -1,0 +1,19 @@
+
+<!-- <app-home>[ash]="ash"</app-home>
+<app-dashboard></app-dashboard>
+<app-employee></app-employee>
+<h1>{{pageHeader}}</h1>
+<list-employee (update)="show($event)"></list-employee>-->
+<nav class='navbar navbar-default'>
+    <div class='container-fluid'>
+      <a class='navbar-brand'>{{pageTitle}}</a>
+      <li><a [routerLink]="['/welcome']">Welcome</a></li>
+      <li><a [routerLink]="['/employee']">Employee</a></li>
+      <!--<li><a routerLinkActive="active"[routerLink]="['/details/:code']"></a></li>-->
+      <li> <a [routerLink]="['/album']">Album</a></li>
+
+    </div>
+  </nav>
+<router-outlet></router-outlet>
+
+
